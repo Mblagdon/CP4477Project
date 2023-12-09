@@ -3,8 +3,9 @@ from joblib import load
 
 app = Flask(__name__)
 
-# Load model
-model = load(r"C:\Users\Marcu\PycharmProjects\CP4477Project\mpg_linear_regression_model.joblib")
+# Load models
+model = load(r"C:\Users\Marcu\PycharmProjects\CP4477Project\models\mpg_linear_regression_model.joblib")
+diabetes_model = load(r"C:\Users\Marcu\PycharmProjects\CP4477Project\models\diabetes_model.joblib")
 
 
 @app.route('/')
@@ -29,10 +30,34 @@ def predict():
         # Make prediction
         prediction = model.predict(input_data)[0]
 
-        # Return the result
-        return f"The predicted MPG is: {prediction}"
+        # Format the result
+        result = f"The predicted MPG is: {prediction}"
+        return render_template('prediction_result.html', result=result)
 
     return render_template('predict.html')
+
+
+@app.route('/predict_diabetes', methods=['GET', 'POST'])
+def predict_diabetes():
+    if request.method == 'POST':
+        # Extract data from form, excluding 'Glucose'
+        pregnancies = request.form.get('pregnancies', type=int)
+        bloodPressure = request.form.get('bloodPressure', type=int)
+        skinThickness = request.form.get('skinThickness', type=int)
+        insulin = request.form.get('insulin', type=int)
+        bmi = request.form.get('bmi', type=float)
+        diabetesPedigreeFunction = request.form.get('diabetesPedigreeFunction', type=float)
+        age = request.form.get('age', type=int)
+
+        # Prepare input data array
+        input_data = [pregnancies, bloodPressure, skinThickness, insulin, bmi, diabetesPedigreeFunction, age]
+
+        # After making a prediction
+        prediction = diabetes_model.predict([input_data])[0]
+        result = f"The predicted glucose level is: {prediction}"
+        return render_template('prediction_result.html', result=result)
+
+    return render_template('diabetes_predict.html')
 
 
 if __name__ == '__main__':

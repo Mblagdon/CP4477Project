@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to the MPG Prediction App!</title>
+    <title>Welcome to the Prediction App!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the MPG Prediction App!</h1>
-        <p>Click below to predict MPG (Miles Per Gallon) for your vehicle.</p>
-        <a href="/predict" class="predict-button">Go to MPG Prediction Form</a>
+        <h1>Welcome to the Prediction App!</h1>
+        <p>Choose a prediction model to get started.</p>
+        <a href="/predict" class="predict-button">Predict MPG</a>
+        <a href="/predict_diabetes" class="predict-button">Predict Diabetes</a>
     </div>
 </body>
 </html>
+
+
