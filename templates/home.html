@@ -1,0 +1,32 @@
+<!-- Extend the base template -->
+{% extends "base.html" %}
+
+<!-- Set the page title -->
+{% block page_title %}
+Marcus' Recipes
+{% endblock %}
+
+<!-- Set the H1 description -->
+{% block H1_Description %}
+    <br><br><br>
+    <h1 class="page-title">Welcome to my website!</h1>
+{% endblock %}
+
+<!-- Set the H1 content -->
+{% block H1_Content %}
+    <br><br>
+<h2 class="greeting">Welcome to Marcus' Recipe website. Please use the menu above to navigate throughout the different web pages!</h2>
+{% endblock %}
+
+<!-- Set the main content of the page -->
+{% block content %}
+    <br><br><br>
+    <img class="home-page-image" src="{{ url_for('static', filename='recipe-word.jpg') }}" alt="Recipe word image">
+{% endblock %}
+
+<!-- Set the footer content -->
+{% block footer %}
+    <p>Marcus Blagdon - Student Number: 20099264</p>
+{% endblock %}
+
+{% block body_class %}home-page-background{% endblock %}

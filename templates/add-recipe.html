@@ -1,0 +1,52 @@
+<!-- Extend the base template -->
+{% extends "base.html" %}
+
+<!-- Set the page title -->
+{% block page_title %}
+Add Recipes!
+{% endblock %}
+
+<!-- Set the H1 description -->
+{% block H1_Description %}
+<br xmlns="http://www.w3.org/1999/html"><br><br>
+    <h1 class="page-title">Add Recipes!</h1>
+{% endblock %}
+
+<!-- Set the H1 content -->
+{% block H1_Content %}
+    <br>
+    <h2 class="greeting">This page of Marcus' Recipe Website allows you to add a recipe to the website!</h2>
+    <br>
+{% endblock %}
+
+<!-- Set the main content of page -->
+{% block content %}
+    <div class="form-container container">
+        <form action="{{ url_for('add_recipe') }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name"><strong>Recipe Name:</strong></label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="image"><strong>Image:</strong></label>
+                <input type="file" id="image" name="image" accept="image/*" class="form-control-file" required>
+            </div>
+            <div class="form-group">
+                <label for="ingredients"><strong>Ingredients:</strong></label>
+                <textarea id="ingredients" name="ingredients" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="preparation"><strong>Preparation Instructions:</strong></label>
+                <textarea id="preparation" name="preparation" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="serving"><strong>Serving Instructions:</strong></label>
+                <input type="text" id="serving" name="serving" class="form-control" required>
+            </div>
+            <input type="submit" value="Add Recipe" class="btn btn-primary">
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block body_class %}add-recipe-background{% endblock %}

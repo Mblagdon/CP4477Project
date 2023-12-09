@@ -1,0 +1,35 @@
+<!-- Extend the base template -->
+{% extends "base.html" %}
+
+<!-- Set the page title -->
+{% block page_title %}
+Remove Recipes!
+{% endblock %}
+
+<!-- Set the main content of page -->
+{% block content %}
+<div class="container">
+    <h1 class="page-title text-center">Remove Recipes!</h1>
+    <h2 class="greeting text-center">This page of Marcus' Recipe Website allows you to remove a recipe from the website!</h2>
+    <form action="{{ url_for('remove_recipe') }}" method="post">
+        <div class="row">
+            {% for recipe in recipes %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipe['Recipe Name'] }}</h5>
+                        <button type="submit" name="remove" value="{{ recipe['Recipe Name'] }}" class="btn btn-danger">Remove</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+    <!-- Insert image below the recipes list -->
+    <div class="image-container text-center mt-5">
+        <img src="{{ url_for('static', filename='hanging-cookware.jpg') }}" alt="Hanging Cookware" class="img-fluid">
+    </div>
+</div>
+{% endblock %}
+
+{% block body_class %}remove-recipe-background{% endblock %}

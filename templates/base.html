@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Link to the main CSS file -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}" type="image/x-icon"> <!-- Favicon for the website -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS for styling -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> <!-- Popper.js for Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Bootstrap JS for interactivity -->
+</head>
+<body class="{% block body_class %}{% endblock %}">
+    <div class="page-container">
+        <div class="content-wrap">
+            <!-- Navigation bar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <a class="navbar-brand" href="{{ url_for('home') }}">Marcus' Recipes</a>
+                  <!-- Button for collapsing the navbar on smaller screens -->
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Navigation links -->
+                    <ul class="navbar-nav">
+                      <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ url_for('recipes') }}">Recipes</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ url_for('remove_recipe') }}">Remove Recipe</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ url_for('search_recipes') }}">Search</a></li>
+                    </ul>
+                  </div>
+            </nav>
+            {% block H1_Description %}{% endblock %} <!-- Block for the main heading -->
+            {% block H1_Content %}{% endblock %} <!-- Block for the sub-heading or greeting -->
+            {% block content %} <!-- Block for the main content -->
+            {% endblock %}
+        </div>
+        <footer>
+            {% block footer %}{% endblock %} <!-- Block for the footer content -->
+        </footer>
+    </div>
+</body>
+</html>
