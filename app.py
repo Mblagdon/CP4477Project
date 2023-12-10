@@ -30,8 +30,11 @@ def predict():
         # Make prediction
         prediction = model.predict(input_data)[0]
 
+        # Round the prediction result to 2 decimal places
+        rounded_prediction = round(prediction, 2)
+
         # Format the result
-        result = f"The predicted MPG is: {prediction}"
+        result = f"The predicted MPG is: {rounded_prediction}"
         return render_template('prediction_result.html', result=result)
 
     return render_template('predict.html')
@@ -54,7 +57,11 @@ def predict_diabetes():
 
         # After making a prediction
         prediction = diabetes_model.predict([input_data])[0]
-        result = f"The predicted glucose level is: {prediction}"
+
+        # Round the prediction result to 2 decimal places
+        rounded_prediction = round(prediction, 2)
+
+        result = f"The predicted glucose level is: {rounded_prediction}"
         return render_template('prediction_result.html', result=result)
 
     return render_template('diabetes_predict.html')
