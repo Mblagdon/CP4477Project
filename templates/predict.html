@@ -4,40 +4,42 @@
     <title>MPG Prediction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <h1>MPG Prediction Form</h1>
-    <form action="/predict" method="post">
-    <!-- Cylinders:-->
-    <label for="cylinders">Cylinders:</label>
-    <input type="number" id="cylinders" name="cylinders" min="1" placeholder="e.g., 4" required><br><br>
+<body class="mpg-body">
+    <div class="mpg-container">
+            <h1>MPG Prediction Form</h1>
+            <form action="/predict" method="post">
+            <!-- Cylinders:-->
+            <label for="cylinders">Cylinders:</label>
+            <input type="number" id="cylinders" name="cylinders" min="1" placeholder="e.g., 4" required><br><br>
 
-    <!-- Horsepower:-->
-    <label for="horsepower">Horsepower:</label>
-    <input type="number" id="horsepower" name="horsepower" min="1" placeholder="e.g., 150" required><br><br>
+            <!-- Horsepower:-->
+            <label for="horsepower">Horsepower:</label>
+            <input type="number" id="horsepower" name="horsepower" min="1" placeholder="e.g., 150" required><br><br>
 
-    <!-- Weight:-->
-    <label for="weight">Weight:</label>
-    <input type="number" id="weight" name="weight" min="1" placeholder="e.g., 3000" required><br><br>
+            <!-- Weight:-->
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" name="weight" min="1" placeholder="e.g., 3000" required><br><br>
 
-    <!-- Age:-->
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age" min="1" placeholder="e.g., 5" required><br><br>
+            <!-- Age:-->
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" placeholder="e.g., 5" required><br><br>
 
-    <!-- Origin Japan:-->
-    <label for="origin_japan">Origin Japan:</label>
-    <select id="origin_japan" name="origin_japan">
-        <option value="0">No</option>
-        <option value="1">Yes</option>
-    </select><br><br>
+            <!-- Origin Japan:-->
+            <label for="origin_japan">Origin Japan:</label>
+            <select id="origin_japan" name="origin_japan">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
 
-    <!-- Origin USA:-->
-    <label for="origin_usa">Origin USA:</label>
-    <select id="origin_usa" name="origin_usa">
-        <option value="0">No</option>
-        <option value="1">Yes</option>
-    </select><br><br>
+            <!-- Origin USA:-->
+            <label for="origin_usa">Origin USA:</label>
+            <select id="origin_usa" name="origin_usa">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
 
-    <button type="submit">Predict MPG</button>
-</form>
+            <button type="submit">Predict MPG</button>
+        </form>
+    </div>
 </body>
 </html>

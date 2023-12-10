@@ -1,3 +1,4 @@
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #ADD8E6; /* Light blue background */
@@ -9,6 +10,8 @@ body {
     height: 100vh; /* Full viewport height */
     text-align: center;
 }
+
+/* Container styles */
 .container {
     background-color: #fff;
     padding: 20px;
@@ -18,6 +21,7 @@ body {
     margin: 20px auto;
 }
 
+/* Text and Form styles */
 h1 {
     color: #333;
     text-align: center;
@@ -40,6 +44,7 @@ input, select {
     box-sizing: border-box; /* Makes sure padding doesn't affect overall width */
 }
 
+/* Button styles */
 button {
     background-color: #007bff;
     color: white;
@@ -54,7 +59,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Button Styling */
+/* Predict Button Styling */
 .predict-button {
     background-color: #4CAF50; /* Green background */
     border: none;
@@ -80,6 +85,7 @@ button:hover {
     text-align: center;
 }
 
+/* Result Container styles */
 .result-container {
     background-color: #ADD8E6; /* Light blue background */
     height: 100vh;
@@ -94,4 +100,14 @@ button:hover {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+/* MPG Page Container styles */
+.mpg-container {
+    background-color: #cccccc;
+}
+
+/* Diabetes Page Container styles */
+.diabetes-container {
+    background-color: #cccccc;
 }
