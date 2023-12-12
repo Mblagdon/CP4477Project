@@ -6,6 +6,7 @@
 </head>
 <body>
     <div class="result-container">
+        <img src="{{ url_for('static', filename='answer.png') }}" alt="Prediction Result">
         <p class="result">{{ result }}</p>
         <a href="/" class="predict-button">Go Back</a>
     </div>
